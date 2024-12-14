@@ -1,11 +1,10 @@
 package top
 
 import chisel3._
-import gcd.GCD 
+import gcd.GCD
 import _root_.circt.stage.ChiselStage
 
-/**
-  * Top module
+/** Top module
   */
 class Top extends Module {
   val io = IO(new Bundle {
@@ -27,10 +26,10 @@ class Top extends Module {
   io.outputValid       := gcd.io.outputValid
 }
 
+//*****************************************************************************
 
-/**************************************************************
- * Generate Verilog sources and save it in file Top.v
- */
+/** Generate Verilog sources and save it in file Top.v
+  */
 
 object TopToV extends App {
   val firtoolOptions = Array(
